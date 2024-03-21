@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('D:/Sem 4/Web Programming/Images/blue5.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .header{
+            min-height: 20vh;
+            width: 100%;
+            background-image:url(image/GREEN.avif);
+            background-position: center;
+            background-size: cover;
+            position:relative;
+        }
+        nav{
+            display: flex;
+            padding: 2% 6%;
+            justify-content:space-between;
+            align-items: center;
+        }
+        nav img{
+            width: 150px;
+        }
+        .nav-links{
+            flex: 1;
+            text-align: right;
+        }
+        .nav-links ul li{
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+        .nav-links ul li a{
+            color: black;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .nav-links ul li::after{
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #e33310;
+            display: block;
+            margin: auto;
+            transition: 0.5S;
+        }
+        .nav-links ul li:hover::after{
+            width: 100%;
+        }
+
+
+
+
+
+
+
+
+
+
+        .container {
+            padding: 20px;
+            background-color: aliceblue;
+            margin: 70px auto 30px;
+            border-radius: 30px;
+            max-width: 400px;
+            box-shadow: 0 6px 10px black;
+        }
+
+        .container form {
+            text-align: center;
+        }
+
+        .container input[type="text"],
+        .container input[type="password"],
+        .container button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .container button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .register-link a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                margin: 70px 20px 30px;
+            }
+        }
+    </style>
+    <title>HOTEL MANAGEMENT</title>
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="Home.html"><img scr='D:/Sem 4/Web Programming/Images/blue5.jpg'></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="Home.html">HOME</a></li>
+                    <li><a href="Reg.html">REGISTER</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" aria-hidden="true"  onclick="showMenu()"></i>
+        </nav>
+    </section>
+    <h1 style="text-align: center;">LOGIN</h1>
+    <div class="container">
+        <form onsubmit="return validateForm()">
+            <br><br>
+            <label style="font-weight: bold;">EMAIL-ID :</label>
+            <br><br>
+            <input type="text" id="email" placeholder="Enter email-id">
+            <br><br>
+            <label style="font-weight: bold;">PASSWORD :</label>
+            <br><br>
+            <input type="password" id="password" placeholder="Enter password">
+            <br><br>
+            <button type="submit">LOGIN</button>
+            <div class="register-link">
+                <a href="Reg.html">Register Now</a>
+            </div>
+            <br><br>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            if (email.trim() === '' || password.trim() === '') {
+                alert('Please enter both email and password');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

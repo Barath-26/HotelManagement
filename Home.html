@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en"     >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOTEL</title>
+    
+    <link rel="stylesheet" href="Home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="Home.html"><img scr='D:/Sem 4/Web Programming/Images/blue5.jpg'></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#about us">ABOUT</a></li>
+                    <li><a href="#contact us">CONTACT</a></li>
+                    <li><a href="Login.html">LOGIN/REGISTER</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" aria-hidden="true"  onclick="showMenu()"></i>
+        </nav>
+        <article id="home"></article>
+        <div class="text-box">
+            <h1 style="color:black;">HACK AND CRACK</h1>
+            <br>
+            <h3 style="color:rgb(0, 0, 0)">
+                HACK AND CRACK is a nationwide initiative to provide students with a platform to solve some of the pressing problems we face in our daily lives, and thus inculcate a culture of product innovation and a mindset of problem-solving.
+            </h3>
+        </div>
+    </section>
+    <article id="contact us"></article>
+    <section class="cta">
+        <h1>contact us <br> webcrashers@gmail.com</h1>
+        <a href="" class="hero-btn">contact as</a>
+    </section>
+    <article id="about us">
+
+    </article>
+    <section class="footer">
+        <h4>About us</h4>
+        <B>WEBCRASHERS </B>
+        <br>
+        <h4>
+            BARATH S
+        </h4>
+        <p>
+            Contact : 9092726117
+            <br>
+            E-Mail : sbarath1@student.tce.edu
+        </p>
+        <h4>
+            GANESH KUMAR S
+        </h4>
+        <p>
+            Contact : 8667583105
+            <br>
+            E-Mail : ganeshkumars@student.tce.edu
+        </p>
+        <div class="icons">
+            <i class="fa fa-facebook"> </i>
+            <i class="fa fa-twitter"> </i>
+            <i class="fa fa-instagram"> </i>
+            <i class="fa fa-linkedin"> </i>
+        </div>
+        <p>made by<i class="fa fa-heart-o"> </i>WEBCRASHERS</p>
+    </section>
+    <script>
+        var navLinks=document.getElementById("navLinks");
+        function hideMenu(){
+            navLinks.style.right= "-200px";
+        }
+        function showMenu(){
+            navLinks.style.right= "0";
+        }
+       
+    </script>
+      
+</body>
+</html>

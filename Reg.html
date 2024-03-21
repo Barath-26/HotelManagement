@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>HOTEL MANAGEMENT</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('D:/Sem 4/Web Programming/Images/blue5.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #333;
+        }
+
+
+        .header{
+            min-height: 10vh;
+            width: 100%;
+            background-image:url(image/GREEN.avif);
+            background-position: center;
+            background-size: cover;
+            position:relative;
+        }
+        nav{
+            display: flex;
+            padding: 2% 6%;
+            justify-content:space-between;
+            align-items: center;
+        }
+        nav img{
+            width: 150px;
+        }
+        .nav-links{
+            flex: 1;
+            text-align: right;
+        }
+        .nav-links ul li{
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+        .nav-links ul li a{
+            color: black;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .nav-links ul li::after{
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #e33310;
+            display: block;
+            margin: auto;
+            transition: 0.5S;
+        }
+        .nav-links ul li:hover::after{
+            width: 100%;
+        }
+
+
+
+
+
+
+
+
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="date"],
+        input[type="radio"],
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .login-link a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="Home.html"><img scr='D:/Sem 4/Web Programming/Images/blue5.jpg'></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="Home.html">HOME</a></li>
+                    <li><a href="Login.html">LOGIN</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" aria-hidden="true"  onclick="showMenu()"></i>
+        </nav>
+    </section>
+    <h1>REGISTER HERE</h1>
+    <div class="container">
+        <form onsubmit="return validateForm()">
+            <label>FIRST NAME :</label>
+            <input type="text" id="firstName" placeholder="Enter first name">
+            <label>SECOND NAME :</label>
+            <input type="text" id="secondName" placeholder="Enter second name">
+            <label>EMAIL-ID :</label>
+            <br>
+            <input type="email" id="email" placeholder="Enter email-id">
+            <br><br>
+            <label>PHONE NUMBER :</label>
+            <input type="text" id="phoneNumber" placeholder="Enter phone number">
+            <label>DATE OF BIRTH :</label>
+            <input type="date" id="dob" placeholder="Enter date of birth">
+            <label>ADDRESS :</label>
+            <input type="text" id="address" placeholder="Enter address">
+            <label>GENDER :</label>
+            <input type="radio" id="male" name="gender">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender">
+            <label for="female">Female</label>
+            <input type="radio" id="others" name="gender">
+            <label for="others">Others</label>
+            <br><br>
+            <label>PASSWORD :</label>
+            <input type="password" id="password" placeholder="Enter password">
+            <label>RE-PASSWORD :</label>
+            <input type="password" id="confirmPassword" placeholder="Re-enter password">
+            <button type="submit">Register</button>
+        </form>
+        <div class="login-link">
+            <a href="login.html">Already have an account? Login here</a>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var firstName = document.getElementById('firstName').value.trim();
+            var secondName = document.getElementById('secondName').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var phoneNumber = document.getElementById('phoneNumber').value.trim();
+            var dob = document.getElementById('dob').value.trim();
+            var address = document.getElementById('address').value.trim();
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+    
+            var nameRegex = /^[A-Za-z]+$/;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var phoneRegex = /^\d{10}$/;
+    
+            if (!firstName || !nameRegex.test(firstName)) {
+                alert('Please enter a valid first name');
+                return false;
+            }
+    
+            if (!secondName || !nameRegex.test(secondName)) {
+                alert('Please enter a valid second name');
+                return false;
+            }
+    
+            if (!email || !emailRegex.test(email)) {
+                ('Please enter a valid email address');
+                return false;
+            }
+    
+            if (!phoneNumber || !phoneRegex.test(phoneNumber)) {
+                alert('Please enter a valid 10-digit phone number');
+                return false;
+            }
+    
+            if (!dob) {
+                alert('Please enter your date of birth');
+                return false;
+            }
+    
+            if (!address) {
+                alert('Please enter your address');
+                return false;
+            }
+    
+            if (!password || !confirmPassword) {
+                alert('Please enter both password fields');
+                return false;
+            }
+    
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                return false;
+            }
+    
+            return true;
+        }
+    </script>    
+</body>
+</html>
